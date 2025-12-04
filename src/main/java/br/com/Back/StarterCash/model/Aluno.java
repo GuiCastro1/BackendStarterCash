@@ -1,4 +1,4 @@
-package br.com.Back.StarterCash.Model;
+package br.com.Back.StarterCash.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -18,14 +18,17 @@ public class Aluno {
     @Column(length = 80, nullable = false, unique = true)
     private String email;
 
-    @Column(length = 80, nullable = false)
+    @Column(length = 100, nullable = false)
     private String senha;
 
-    private int coins;
+    @Column(length = 50, nullable = false)
+    private int coins = 50;
 
-    private  int xp;
+    @Column(length = 50, nullable = false)
+    private  int xp = 50;
 
-    private boolean passe;
+    @Column(length = 30, nullable = false)
+    private String  passe;
 
     public Long getId() {
         return id;
@@ -75,11 +78,11 @@ public class Aluno {
         this.xp = xp;
     }
 
-    public boolean isPasse() {
+    public String getPasse() {
         return passe;
     }
 
-    public void setPasse(boolean passe) {
+    public void setPasse(String passe) {
         this.passe = passe;
     }
 }

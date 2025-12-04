@@ -1,4 +1,4 @@
-package br.com.Back.StarterCash.Model;
+package br.com.Back.StarterCash.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
