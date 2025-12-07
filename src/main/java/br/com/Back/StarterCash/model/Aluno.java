@@ -1,5 +1,7 @@
 package br.com.Back.StarterCash.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+//import br.com.Back.StarterCash.model.TipoAcesso;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +20,11 @@ public class Aluno {
     @Column(length = 80, nullable = false, unique = true)
     private String email;
 
+    @Column(length = 5, nullable = false)
+    private int idade;
+
     @Column(length = 100, nullable = false)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String senha;
 
     @Column(length = 50, nullable = false)
@@ -26,9 +32,9 @@ public class Aluno {
 
     @Column(length = 50, nullable = false)
     private  int xp = 50;
-
+    @Enumerated(EnumType.STRING)
     @Column(length = 30, nullable = false)
-    private String  passe;
+    private TipoAcesso  passe = TipoAcesso.BASICO;
 
     public Long getId() {
         return id;
@@ -52,6 +58,14 @@ public class Aluno {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 
     public String getSenha() {
@@ -78,11 +92,11 @@ public class Aluno {
         this.xp = xp;
     }
 
-    public String getPasse() {
+    public TipoAcesso getPasse() {
         return passe;
     }
 
-    public void setPasse(String passe) {
+    public void setPasse(TipoAcesso passe) {
         this.passe = passe;
     }
 }
