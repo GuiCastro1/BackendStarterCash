@@ -51,4 +51,76 @@ public class Simulacao {
     // ===============================
     @Column(nullable = false)
     private boolean ativo = true;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+    public String getTipoInvestimento() {
+        return tipoInvestimento;
+    }
+
+    public void setTipoInvestimento(String tipoInvestimento) {
+        this.tipoInvestimento = tipoInvestimento;
+    }
+
+    public double getTaxaAplicada() {
+        return taxaAplicada;
+    }
+
+    public void setTaxaAplicada(double taxaAplicada) {
+        this.taxaAplicada = taxaAplicada;
+    }
+
+    public double getValorInvestido() {
+        return valorInvestido;
+    }
+
+    public void setValorInvestido(double valorInvestido) {
+        this.valorInvestido = valorInvestido;
+    }
+
+    public double getValorAtual() {
+        return valorAtual;
+    }
+
+    public void setValorAtual(double valorAtual) {
+        this.valorAtual = valorAtual;
+    }
+
+    public LocalDateTime getDataInicio() {
+        return dataInicio;
+    }
+
+    public void setDataInicio(LocalDateTime dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public LocalDateTime getUltimaAtualizacao() {
+        return ultimaAtualizacao;
+    }
+
+    public void setUltimaAtualizacao(LocalDateTime ultimaAtualizacao) {
+        this.ultimaAtualizacao = ultimaAtualizacao;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
 }

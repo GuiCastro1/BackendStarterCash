@@ -46,4 +46,60 @@ public class Matriculas {
         this.dataMatricula = LocalDateTime.now();
         this.status = "ATIVA";
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+    public Cursos getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Cursos curso) {
+        this.curso = curso;
+    }
+
+    public LocalDateTime getDataMatricula() {
+        return dataMatricula;
+    }
+
+    public void setDataMatricula(LocalDateTime dataMatricula) {
+        this.dataMatricula = dataMatricula;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getProgresso() {
+        return progresso;
+    }
+
+    public void setProgresso(int progresso) {
+        this.progresso = progresso;
+    }
+
+    public LocalDateTime getDataConclusao() {
+        return dataConclusao;
+    }
+
+    public void setDataConclusao(LocalDateTime dataConclusao) {
+        this.dataConclusao = dataConclusao;
+    }
 }
