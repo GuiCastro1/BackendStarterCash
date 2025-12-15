@@ -1,10 +1,13 @@
 package br.com.Back.StarterCash.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 //import br.com.Back.StarterCash.model.TipoAcesso;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Setter
 @Getter
@@ -35,6 +38,29 @@ public class Aluno {
     @Enumerated(EnumType.STRING)
     @Column(length = 30, nullable = false)
     private TipoAcesso  passe = TipoAcesso.BASICO;
+
+    @OneToMany(mappedBy = "aluno")
+    private List<Simulacao> simulacoes;
+
+    @OneToMany(mappedBy = "aluno")
+    @JsonIgnore
+    private List<Matriculas> matriculas;
+
+    public List<Matriculas> getMatriculas() {
+        return matriculas;
+    }
+
+    public void setMatriculas(List<Matriculas> matriculas) {
+        this.matriculas = matriculas;
+    }
+
+    public List<Simulacao> getSimulacoes() {
+        return simulacoes;
+    }
+
+    public void setSimulacoes(List<Simulacao> simulacoes) {
+        this.simulacoes = simulacoes;
+    }
 
     public Long getId() {
         return id;
